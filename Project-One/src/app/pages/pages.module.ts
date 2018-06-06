@@ -1,7 +1,6 @@
-import { CoreModule } from './../core/core.module';
 import { PagesComponent } from './pages.component';
 import { OrdersComponent } from './orders/orders.component';
-import { SharedModule } from './../share/share.module';
+import * as Share from '../share';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ProductsComponent } from './products/products.component';
@@ -11,19 +10,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
-    declarations: [
-        // DashboardComponent,
-        // PagesComponent,
-        // OrdersComponent,
-        // ProductsComponent,
-        // UsersComponent
-    ],
-    imports: [
-        CommonModule,
-        SharedModule,
-        PagesRoutingModule,
-        CoreModule
-    ],
+  declarations: [
+    DashboardComponent,
+    PagesComponent,
+    OrdersComponent,
+    ProductsComponent,
+    UsersComponent,
+    Share.MainNavComponent,
+    Share.PageHeaderComponent
+  ],
+  imports: [
+    CommonModule,
+    PagesRoutingModule,
+    Share.ShareModule
+  ]
 
 })
 export class PagesModule {
